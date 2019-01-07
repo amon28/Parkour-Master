@@ -44,12 +44,12 @@ class LobbyTask extends Task implements Listener {
 		{
 		$this->placebarrier();	
 		}
-		if($start < 1)
+		if($start <= 5)
 		{		
 		$pn->sendTip(C::GREEN.C::UNDERLINE.$start."/5");
 		}
 		 if($this->x == 0) {	 		 
-          if($start >= 1) {	
+          if($start >= 5) {	
 			$this->x=1;
               $this->getPlugin()->getLogger()->info("Starting a parkour game!");         			  
 			  //$this->getPlugin()->removeTask($this->getTaskId()); Stops the task
@@ -79,12 +79,11 @@ class LobbyTask extends Task implements Listener {
 		
 		if($this->x == 2)
 		{
-			
-	if(round($pn->getY()) <= 8){
-	$pn->teleport($this->getPlugin()->getServer()->getLevelByName($this->world)->getSpawnLocation());
-	}
-						
+	
     $block = $pn->getLevel()->getBlock($pn->subtract(0, 1, 0));
+	if($block->getId() === Block::GRASS){
+	$pn->teleport($this->getPlugin()->getServer()->getLevelByName($this->world)->getSpawnLocation());	
+	}
     if($block->getId() === Block::GOLD_BLOCK) {
 	array_push($this->players, $pn->getName());	
 	$pn->sendMessage(C::YELLOW.C::UNDERLINE. implode($this->players) .C::RESET.C::UNDERLINE." Has Won the Parkour!");	
