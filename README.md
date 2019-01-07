@@ -1,10 +1,5 @@
-# Player-Head
-Gets player head when you kill someone.
+# Parkour Master
+A parkour Minigame Plugin.
 
-# How To Install (recommended to have DevTools)
-●1.Download the plugin.
-●2.Go to Pocketmine folder.
-●3.Open Plugins folder.
-●4.Copy the plugin folder.
-●5.Paste the Plugin folder in the plugins.
-●6.Enjoy!
+# Recommended to have DevTools
+Unzip the plugin in your plugins folder and Enjoy!.
